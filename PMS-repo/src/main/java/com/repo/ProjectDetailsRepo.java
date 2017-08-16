@@ -31,7 +31,10 @@ public class ProjectDetailsRepo{
 	}
 	
 	public void deletePro(ProjectDetailsDTO p) {
-			hibernateTemplate.delete(p);
-		
+			hibernateTemplate.delete(p);	
 	}
+	
+	public void updateProject(ProjectDetailsDTO p) {
+		hibernateTemplate.update(p);	
+}
 }

@@ -30,6 +30,14 @@ public class ProjectDetailsService {
 		List li=pRepo.getPro(id);
 		ProjectDetailsDTO p=(ProjectDetailsDTO) li.get(0);
 		pRepo.deletePro(p);
-		
+	}
+	public ProjectDetailsDTO getProject(int id) {
+		List li=pRepo.getPro(id);
+		ProjectDetailsDTO p=(ProjectDetailsDTO) li.get(0);
+		return p;
+	}
+	
+	public void updateProject(ProjectDetailsDTO p) {
+		pRepo.updateProject(p);
 	}
 }

@@ -36,4 +36,8 @@
 	<definition id="project" name="project" extends="baseTemplate1">
 		<put-attribute name="body" value="/WEB-INF/jsp/ProjectDetails.jsp"></put-attribute>
 	</definition>
+	<!-- Mapping for Project details Page -->
+	<definition id="editProject" name="editProject" extends="baseTemplate1">
+		<put-attribute name="body" value="/WEB-INF/jsp/updateProject.jsp"></put-attribute>
+	</definition>
 </tiles-definitions>

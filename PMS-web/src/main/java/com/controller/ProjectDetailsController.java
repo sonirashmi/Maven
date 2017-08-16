@@ -53,4 +53,16 @@ public class ProjectDetailsController {
 		pService.deleteProject(Integer.parseInt(request.getParameter("id")));
 		return "redirect:/project.do";
 	}
+	
+	@RequestMapping(value="/editProject")
+	public String getProject(HttpServletRequest request,ModelMap map) {
+		map.put("project", pService.getProject(Integer.parseInt(request.getParameter("id"))));
+		return "editProject";
+	}
+	
+	@RequestMapping(value="/editProject",method=RequestMethod.POST)
+	public String saveProject(@ModelAttribute("project") ProjectDetailsDTO p) {
+		pService.updateProject(p);
+		return "redirect:/project.do";
+	}
 }

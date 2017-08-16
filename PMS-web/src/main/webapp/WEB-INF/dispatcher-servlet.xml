@@ -15,6 +15,19 @@
 
 	<context:annotation-config></context:annotation-config>
 	<mvc:annotation-driven></mvc:annotation-driven>
+	<mvc:interceptors>
+		<mvc:interceptor>
+			<mvc:mapping path="/**" />
+		<mvc:exclude-mapping path="/login.do*"/>
+			<bean class="com.aartek.interceptor.CommonInterceptor"></bean>
+		</mvc:interceptor>
+		<mvc:interceptor>
+			<mvc:mapping path="/**"/>
+			<bean class="com.aartek.interceptor.LoginInterceptor" ></bean>
+		</mvc:interceptor>
+
+	</mvc:interceptors>
+
 	<bean id="viewResolver"
 		class="org.springframework.web.servlet.view.UrlBasedViewResolver">
 		<property name="contentType" value="text/html;charset=UTF-8" />
@@ -32,13 +45,14 @@
 			</list>
 		</property>
 	</bean>
-	
-	  <!-- App Custom Message Properties And For Localization Config -->
-	<bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
-	 <property name="basenames">
-	 	<list>
-	 	<value>messages</value>
-	 	</list>
-	 </property>
+
+	<!-- App Custom Message Properties And For Localization Config -->
+	<bean id="messageSource"
+		class="org.springframework.context.support.ResourceBundleMessageSource">
+		<property name="basenames">
+			<list>
+				<value>messages</value>
+			</list>
+		</property>
 	</bean>
 </beans>

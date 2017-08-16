@@ -66,5 +66,4 @@ public class UserLogin {
 		this.mob = mob;
 	}
 
-	
 }
